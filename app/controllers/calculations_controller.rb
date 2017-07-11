@@ -108,16 +108,24 @@ class CalculationsController < ApplicationController
 
     @mean = @numbers.sum/@numbers.count
       
-      # @var = []
-      # @numbers.each do |vars|
-      #   square = ((@numbers - (@numbers.sum/@numbers.count)) ** 2)
-      #   @var.push(square)
-      # end  
-    @variance = # @var.sum
+      @var = []
+      @numbers.each do |vars|
+        square = ((vars - (@numbers.sum/@numbers.count)) ** 2)
+        @var.push(square)
+      end  
+    @variance = @var.sum/@numbers.count
 
-    @standard_deviation = "Replace this string with your answer."
+    @standard_deviation = Math.sqrt(@var.sum/@numbers.count)
 
-    @mode = "Replace this string with your answer."
+    #  @possibles = []
+    #  @possibles_count = []
+    #  @numbers.each do |num|
+    #    if @numbers.count(num) > @possibles_count
+    #      @possibles = num
+    #      @possibles_count = @numbers.count(num)
+    #    end   
+    #  end
+    @mode = # @possibles
 
     # ================================================================================
     # Your code goes above.
