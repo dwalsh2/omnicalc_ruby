@@ -117,15 +117,15 @@ class CalculationsController < ApplicationController
 
     @standard_deviation = Math.sqrt(@var.sum/@numbers.count)
 
-    #  @possibles = []
-    #  @possibles_count = []
-    #  @numbers.each do |num|
-    #    if @numbers.count(num) > @possibles_count
-    #      @possibles = num
-    #      @possibles_count = @numbers.count(num)
-    #    end   
-    #  end
-    @mode = # @possibles
+      @possibles = 0
+      @possibles_count = 0
+      @numbers.each do |num|
+        if @numbers.count(num) > @possibles_count
+          @possibles = num
+          @possibles_count = @numbers.count(num)
+        end   
+      end
+    @mode = @possibles
 
     # ================================================================================
     # Your code goes above.
