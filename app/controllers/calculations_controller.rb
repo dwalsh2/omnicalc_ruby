@@ -97,12 +97,6 @@ class CalculationsController < ApplicationController
     else 
       @median = (@numbers.sort[@numbers.count/2] + @numbers.sort.reverse[@numbers.count/2])/2
     end
-              # while @numbers.count > 2
-              #   @numbers.first.chomp
-              #   @numbers.last.chomp
-              # end  
-    
-              # @numbers.first
 
     @sum = @numbers.sum
 
